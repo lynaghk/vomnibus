@@ -45,6 +45,16 @@
                                  (remove (fn [[k _]] (= :type k)) nums)))))]))
 
 
-
+  ;;;;;;;;;;;;;;;;;;;;;;;
+  ;;D3
+  ;;;;;;;;;;;;;;;;;;;;;;;
+  
+    (spit "src/vomnibus/d3.clj"
+        (join "\n"
+              ["(ns vomnibus.d3)"
+               (str "(def flare " (prn-str (parse-string (slurp "../software/d3/examples/data/flare.json") true)) ")")
+               (str "(def flare-imports " (prn-str (parse-string (slurp "../software/d3/examples/data/flare-imports.json") true)) ")")
+               ]))
+    
 
   )
