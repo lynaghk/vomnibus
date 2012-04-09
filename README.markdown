@@ -62,7 +62,10 @@ Taken from [D3.js](http://mbostock.github.com/d3), which is under MIT; Copyright
 See [this commit](https://github.com/mbostock/d3/commit/254a8e3e78ff7cc448d3657c553218bdc90478c6) in D3 for methodology.
 
 
+Changelog
+=========
 
+0.3.0 Incorporate CLJX; full ClojureScript support
 
 
 &c.
