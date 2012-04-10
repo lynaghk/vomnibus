@@ -1,4 +1,4 @@
-(defproject com.keminglabs/vomnibus "0.3.0-SNAPSHOT"
+(defproject com.keminglabs/vomnibus "0.3.0"
   :description "An assortment of useful geographic data, color schemes, &c."
   :dependencies [[org.clojure/clojure "1.3.0"]]
   :profiles {:dev {:dependencies [[cheshire "2.2.2"]]}}
