@@ -27,26 +27,41 @@ and just `:require` or `:use` whatever you need.
 
 
 
-geo.us
-------
-*states* map of state name to geoJSON shape, e.g.;
+geo.us.states
+-------------
+`states`, map of state name to geoJSON shape, e.g.;
 
     {"Arizona" {:type "Feature", :id "04", :properties {:name "Arizona"}, :geometry {:type "Polygon", :coordinates [[[-109.042503 37.000263] [-109.04798 ...
 
-*counties* list of all counties in geoJSON shape
+geo.us.counties
+---------------
+`counties`, list of all counties in geoJSON shape.
+*Note*, don't try running this one through Google Closure; it takes impossibly long to process.
 
 geo.world
 ---------
-*countries* map of country name to geoJSON shape
+`countries` map of country name to geoJSON shape
 
 
 color-brewer
 ------------
 Cynthia Brewer's color schemes by name, e.g.;
 
-    (def OrRd-3 ["rgb(254,232,200)" "rgb(253,187,132)" "rgb(227,74,51)"])
+```clojure
+(def OrRd-3 ["rgb(254,232,200)" "rgb(253,187,132)" "rgb(227,74,51)"])
+```
 
 For full list of colors, see [Colorbrewer](http://colorbrewer2.org/)
+
+
+d3
+--
+`flare` and `flare-imports` data used in D3 & ProtoVis examples
+
+d3-colors
+---------
+Categorical color schemes: `Categorical-10`, `Categorical-20`, `Categorical-20b`, `Categorical-20c`.
+
 
 Licensing
 =========
