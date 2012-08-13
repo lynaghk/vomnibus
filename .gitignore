@@ -7,3 +7,5 @@
 /.lein-deps-sum
 
 /.generated
+/data
+pom.xml
