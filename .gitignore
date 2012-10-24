@@ -5,7 +5,7 @@
 /.lein-failures
 /checkouts
 /.lein-deps-sum
-
+/resources
 /.generated
 /data
 pom.xml

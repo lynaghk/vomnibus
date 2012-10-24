@@ -6,30 +6,22 @@
 
   (use 'cheshire.core)
   (use '[clojure.string :only [join]])
+  
+  (.mkdirs (java.io.File. "resources/vomnibus/geo/us"))
+  (spit "resources/vomnibus/geo/us/states.clj"
+        (prn-str (into {} (map (fn [x] [(-> x :properties :name) x])
+                               (:features (parse-string (slurp "../software/d3/examples/data/us-states.json") true))))))
+  
+  (spit "resources/vomnibus/geo/us/counties.clj"
+        (prn-str (:features (parse-string (slurp "../software/d3/examples/data/us-counties.json") true))))
+
+  (spit "resources/vomnibus/geo/world_countries.clj"
+        (prn-str (parse-string (slurp "../software/d3/examples/data/world-countries.json") true)))
 
 
-  (spit "src/vomnibus/geo/us.clj"
-        (join "\n"
-              ["(ns vomnibus.geo.us)"
 
-               (str "(def states "
-                    (prn-str (into {} (map (fn [x] [(-> x :properties :name) x])
-                                           (:features (parse-string (slurp "../software/d3/examples/data/us-states.json") true)))))
-                    ")")
 
-               (str "(def counties "
-                    ;;counties is just a list
-                    (prn-str (:features (parse-string (slurp "../software/d3/examples/data/us-counties.json") true)))
-                    ")")]))
-
-  (spit "src/vomnibus/geo/world.clj"
-        (join "\n"
-              ["(ns vomnibus.geo.world)"
-
-               (str "(def countries "
-                    (prn-str (parse-string (slurp "../software/d3/examples/data/world-countries.json") true))
-                    ")")]))
-
+  
   (spit "src/vomnibus/color_brewer.clj"
         (join "\n"
 
@@ -68,21 +60,17 @@
       (apply (partial map #(zipmap ks %&))
              (map #(get df-map %) ks))))
 
-  (spit "src/cljx/vomnibus/r.cljx"
-        (join "\n"
-              ["(ns vomnibus.r)"
-               (str "(def mtcars "
-                    (-> (slurp "data/mtcars.json")
+  
+  (.mkdirs (java.io.File. "resources/vomnibus/r/"))
+  (spit "resources/vomnibus/r/mtcars.clj"
+        (-> (slurp "data/mtcars.json")
                         (parse-string true)
-                        df->maps vec pr-str)
-                    ")")
+                        df->maps vec pr-str))
 
-               (str "(def diamonds "
-                    (-> (slurp "data/diamonds.json")
+  (spit "resources/vomnibus/r/diamonds.clj"
+        (-> (slurp "data/diamonds.json")
                         (parse-string true)
-                        df->maps vec pr-str)
-                    ")")
-
-               ]))
+                        df->maps vec pr-str))
+  
 
   )
