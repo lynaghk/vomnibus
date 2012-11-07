@@ -21,7 +21,7 @@
 Vomnibus is an assortment of handy data for making information graphics in Clojure and ClojureScript.
 Add it to your Leiningen `project.clj`:
 
-    [com.keminglabs/vomnibus "0.3.0"]
+    [com.keminglabs/vomnibus "0.3.2"]
 
 and just `:require` or `:use` whatever you need.
 
